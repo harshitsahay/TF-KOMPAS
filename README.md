@@ -1,4 +1,5 @@
-# TF-KOMPAS
+# TF K.O.M.P.A.S.
+Kmers Oriented to Models Perform Aligned Searches
 
 -------
 **This software is under development for publication, currently in the validation stage. It is not yet ready for general use.**
