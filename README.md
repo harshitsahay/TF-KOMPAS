@@ -5,21 +5,17 @@ Kmers Oriented to Models Perform Aligned Searches
 **This software is under development for publication, currently in the validation stage. It is not yet ready for general use.**
 -------
 
-Transcription Factor Kmers Oriented to Models Perform Aligned Searches is a program that calls binding sites using high-throughput kmer data from protein binding microarrays and SELEX-seq. It takes in the following input:
+Transcription Factor Kmers Oriented to Models Perform Aligned Searches is a suite of tools that calls binding sites using high-throughput kmer data from protein binding microarrays and SELEX-seq. It uses a novel algorithm the builds on previous kmer overlap methods. Currently, the following programs are includes:
 
-Files:
-1. PWM model 
-2. kmer data from PBM for SELEX-seq
-3. A bed file to search for occurences
+1. KOMPAS: Kmer Alignment
+2. KOMPAS: Site Caller
+3. KOMPAS: Gapped Dimeric Calls
 
-Parameters:
-1. The minimum positions in the model required to fully describe the binding site. Called the core positions.
-2. Binding signal cuttoff to use in the PBM or SELEX-seq data. 
-3. A relative position in the model to center the calls on (optional, default is the middle of the PWM rounded down)
+Kmer Alignment produces an aligned kmer file that can be used with the Site Caller or Gapped Dimeric Calls scripts. For most transcription factors, even dimeric palindromes, Site Caller is appropriate for use. When the transcription factor is a gapped dimeric palindrome with a full model size that is larger than k to the point where aligned kmers of high enrichment mostly (or only) describe half sites, the Gapped Dimeric Calls script can be used. 
 
-Output:
+Pipeline Output:
 1. Centered sites in 0-base bed format with orientation (+/-)
-2. Log file (optional)
+2. log file (optional)
 
 Currently, the TF_KOMPAS_kmer_alignment produces aligned kmers that are then used in TF_KOMPAS_Site_Caller to call the sites.
 
